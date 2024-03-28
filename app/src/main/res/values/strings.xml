@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Art Space</string>
+
+    <string name="art1tittle">Still Life of Blue Rose and Other Flowers</string>
+    <string name="art1artist">Owen Scott</string>
+    <string name="art1year">2021</string>
+
+    <string name="art2tittle">Ami Tomake Bhalobhasi</string>
+    <string name="art2artist">Arijit Nayak</string>
+    <string name="art2year">2024</string>
+
+    <string name="art3tittle">The Mix of black And White</string>
+    <string name="art3artist">Henry Washuinton</string>
+    <string name="art3year">1970</string>
+
+    <string name="art4tittle">I am Only Person</string>
+    <string name="art4artist">Louis Fonsy</string>
+    <string name="art4year">2016</string>
+</resources>
