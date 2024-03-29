@@ -50,6 +50,7 @@ class MainActivity : ComponentActivity() {
                     ArtSpace()
                 }
             }
+
         }
     }
 }
@@ -69,34 +70,34 @@ fun ArtSpace(){
                 modifier = Modifier,
                 current = 1,
                 total = 3,
-                Nextfunc = {page=2},
-                Prevfunc = {}
+                nextfunc = {page=2},
+                prevfunc = {}
 
             )
 
 
         } 2->{
             Art(
-                image = R.drawable.europeana_5tk1f5vfdik_unsplash,
+                image = R.drawable.maria_orlova_bu8texhspcy_unsplash,
                 title = R.string.art2tittle,
                 artist = R.string.art2artist,
                 ArtYear = R.string.art2year,
                 current = 2,
                 total = 3,
                 modifier = Modifier,
-                Nextfunc = {page=3},
-                Prevfunc = {page = 1}
+                nextfunc = {page=3},
+                prevfunc = {page = 1}
             )
         } 3->{
             Art(
-                image = R.drawable.maria_orlova_bu8texhspcy_unsplash,
+                image = R.drawable.adrianna_geo_1rbg5ysi00c_unsplash,
                 title = R.string.art3tittle,
                 artist = R.string.art3artist,
                 ArtYear = R.string.art3year,
                 current = 3,
                 total=3,
-                Nextfunc = {},
-                Prevfunc = {page = 2},
+                nextfunc = {},
+                prevfunc = {page = 2},
                 modifier = Modifier
             )
         }
@@ -128,7 +129,7 @@ fun Controller(
         }
 
         Spacer(modifier = Modifier.width(16.dp))
-        if(currentpage <= totalPage){
+        if(currentpage < totalPage){
             Button(onClick = nextFn) {
                 Text("Next")
             }
@@ -144,7 +145,7 @@ fun Controller(
 
 
 @Composable
-fun Art(image: Int, modifier: Modifier = Modifier,title : Int , artist:Int,ArtYear:Int,current:Int,total:Int,Prevfunc:()->Unit,Nextfunc:()->Unit) {
+fun Art(image: Int, modifier: Modifier = Modifier,title : Int , artist:Int,ArtYear:Int,current:Int,total:Int,prevfunc:()->Unit,nextfunc:()->Unit) {
 
 
     Surface(
@@ -166,7 +167,7 @@ fun Art(image: Int, modifier: Modifier = Modifier,title : Int , artist:Int,ArtYe
 
             ArtText(title=title,ArtYear=ArtYear, artist = artist)
 
-            Controller(currentpage = current, totalPage = total, nextFn = Nextfunc , PrevfN = Prevfunc)
+            Controller(currentpage = current, totalPage = total, nextFn = nextfunc , PrevfN = prevfunc)
         }
 
     }
